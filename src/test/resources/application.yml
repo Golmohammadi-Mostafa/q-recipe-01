@@ -12,7 +12,7 @@ spring:
     password: recipe
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
     show-sql: false
     database: h2
     database-platform: org.hibernate.dialect.H2Dialect
