@@ -8,6 +8,8 @@ This project has been developed to add, update, remove and get recipes.
 * Maven
 * you can see APIs: [Swagger](http://localhost:8080/swagger-ui.html#)
 * In the root directory you can find postman collection
+##
+**Note: Once you have successfully logged in and obtained the token, you should introduce it with the prefix "Bearer .**
 ### Dependencies And Tools Used To Build Application
 
 * Git
