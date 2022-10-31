@@ -26,7 +26,6 @@ This project has been developed to add, update, remove and get recipes.
 
 ### How to dockerized SpringBoot App & PostgresSQL
 
-**Note: you must have some knowledge of docker as I am not going to explain in detail here, if you have any queries you can ask me.**
 
 * There is a **Dockerfile** in the root directory `Dockerfile and docker-compose.yml`, this file is used to dockerized the SpringBoot App.
 
