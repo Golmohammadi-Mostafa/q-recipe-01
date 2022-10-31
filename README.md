@@ -29,7 +29,7 @@ This project has been developed to add, update, remove and get recipes.
 
 * There is a **Dockerfile** in the root directory `Dockerfile and docker-compose.yml`, this file is used to dockerized the SpringBoot App.
 
-* The last and most important file is **docker-compose.yml**, which is available in the `docker-postgres-springboot-demo` directory, this file contains the configuration which will start the **SpringBoot App** and **PostgresSQL** and make them connected.
+* The last and most important file is **docker-compose.yml**, which is available in the `recipe` directory, this file contains the configuration which will start the **SpringBoot App** and **PostgresSQL** and make them connected.
 
 ### Start the Application with the help of Docker
 
