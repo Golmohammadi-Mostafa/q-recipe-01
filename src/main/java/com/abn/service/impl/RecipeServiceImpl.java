@@ -32,6 +32,11 @@ import java.util.regex.Pattern;
 
 import static org.springframework.data.jpa.repository.query.QueryUtils.toOrders;
 
+/**
+ * @author Mostafa
+ * @version 1.0
+ * @since 2022-11-01
+ */
 
 @Slf4j
 @AllArgsConstructor
@@ -43,6 +48,14 @@ public class RecipeServiceImpl implements RecipeService {
     @PersistenceContext
     private EntityManager entityManager;
 
+    /**
+     * This method creates new recipe for user who is logged in
+     *
+     * @param recipeDTO the required fields of recipe
+     * @param username  user who logged in to the system
+     * @return the created recipe
+     * @see Recipe
+     */
     @Transactional
     @Override
     public Recipe create(RecipeRequestDTO recipeDTO, String username) {
@@ -55,6 +68,11 @@ public class RecipeServiceImpl implements RecipeService {
         return recipeRepository.save(recipe);
     }
 
+    /**
+     * This method delete a recipe by id
+     *
+     * @param id this is recipe id
+     */
     @Override
     @Transactional
     public void delete(Long id) {
@@ -66,6 +84,15 @@ public class RecipeServiceImpl implements RecipeService {
         log.info("recipe successfully deleted fo the id {}", id);
     }
 
+
+    /**
+     * This method always return a Recipe if it's exist already return updated recipe
+     * if recipe does not exit return new one.
+     *
+     * @param recipeDTO the recipe fields
+     * @param id        recipe id
+     * @return recipe as a result
+     */
     @Override
     @Transactional
     public Recipe update(RecipeRequestDTO recipeDTO, Long id) {
@@ -87,6 +114,17 @@ public class RecipeServiceImpl implements RecipeService {
                 });
     }
 
+    /**
+     * This method always returns Recipes, whether the
+     * Recipes exist or not.
+     *
+     * @param searchRecipe     recipe filed in search filter
+     * @param searchIngredient Ingredient field in search filter
+     * @param page             page number
+     * @param size             page size
+     * @return list of recipes
+     * @see List<Recipe>
+     */
     @Override
     @Transactional(readOnly = true)
     public List<Recipe> retrieve(String searchRecipe, String searchIngredient, int page, int size) {
@@ -253,6 +291,14 @@ public class RecipeServiceImpl implements RecipeService {
         return predicate;
     }
 
+    /**
+     * this method parses the search filter for finding criteria
+     * (: !: < <= > >= )
+     *
+     * @param search this search filter query
+     * @return list of Search criteria
+     * @see SearchCriteria
+     */
     private List<SearchCriteria> setSearchCriteria(String search) {
         List<SearchCriteria> params = new ArrayList<>();
         if (search != null) {

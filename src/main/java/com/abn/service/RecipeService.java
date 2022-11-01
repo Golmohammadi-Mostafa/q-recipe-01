@@ -6,6 +6,11 @@ import com.abn.entity.Recipe;
 
 import java.util.List;
 
+/**
+ * @author Mostafa
+ * @version 1.0
+ * @since 2022-11-01
+ */
 public interface RecipeService {
     Recipe create(RecipeRequestDTO recipeDTO, String username);
 

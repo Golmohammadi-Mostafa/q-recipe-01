@@ -9,7 +9,9 @@ This project has been developed to add, update, remove and get recipes.
 * In the root directory you can find postman collection
 
 ##
+
 You can use the following operations to search and find recipes in the search filter:
+
 * EQUAL / LiKE (for String) :
 * NOT_EQUAL/ NOT_LIKE !:
 * GREATER_THAN >
@@ -21,6 +23,7 @@ You can use the following operations to search and find recipes in the search fi
 * value: the field value, for example, oven, etc.
 * search filter recipes for example (instructions:oven,vegetarian:false)
 * search filter ingredients for example (name:onion)
+
 ##
 
 **Note: Once you have successfully logged in and obtained the token, you should introduce it with the prefix "Bearer .**

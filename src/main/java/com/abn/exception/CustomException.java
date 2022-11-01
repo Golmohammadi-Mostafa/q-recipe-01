@@ -3,6 +3,11 @@ package com.abn.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
+/**
+ * @author Mostafa
+ * @version 1.0
+ * @since 2022-11-01
+ */
 public class CustomException extends ResponseStatusException {
 
     private static final long serialVersionUID = 1L;

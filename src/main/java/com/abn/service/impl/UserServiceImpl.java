@@ -23,6 +23,11 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
+/**
+ * @author Mostafa
+ * @version 1.0
+ * @since 2022-11-01
+ */
 @Slf4j
 @Service
 public class UserServiceImpl implements UserService {
@@ -47,6 +52,13 @@ public class UserServiceImpl implements UserService {
         this.roleService = roleService;
     }
 
+    /**
+     * This is the method to log in
+     *
+     * @param username username of user
+     * @param password password of user
+     * @return this method return jwt token for logged in user
+     */
     @Override
     public JwtTokenDTO signIn(String username, String password) {
         try {
@@ -59,6 +71,10 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    /**
+     * @param singUpDTO required field to register new user
+     * @return jwt token of user
+     */
     @Override
     public JwtTokenDTO signUp(SingUpDTO singUpDTO) {
         if (!userRepository.existsByUsername(singUpDTO.getUsername())) {

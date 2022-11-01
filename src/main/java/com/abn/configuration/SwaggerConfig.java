@@ -15,6 +15,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * @author Mostafa
+ * @version 1.0
+ * @since 2022-11-01
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
