@@ -14,7 +14,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.jdbc.Sql;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -125,9 +124,9 @@ public class RecipeServiceTest {
         Recipe updatedRecipe = recipeService.update(recipeRequestDTO, recipe.getId());
 
         assertEquals(updatedRecipe.getId(), recipe.getId());
-        assertNotEquals(updatedRecipe.getServes(),recipe.getServes());
-        assertNotEquals(updatedRecipe.getInstructions(),recipe.getInstructions());
-        assertNotEquals(updatedRecipe.getInstructions(),recipe.getInstructions());
+        assertNotEquals(updatedRecipe.getServes(), recipe.getServes());
+        assertNotEquals(updatedRecipe.getInstructions(), recipe.getInstructions());
+        assertNotEquals(updatedRecipe.getInstructions(), recipe.getInstructions());
     }
 
     @Test
@@ -172,6 +171,6 @@ public class RecipeServiceTest {
         String searchRecipe = "serves:4,instructions:stove";
 
         List<Recipe> recipes = recipeService.retrieve(searchRecipe, searchIngredient, 0, 10);
-        assertEquals(recipes.size(),1);
+        assertEquals(recipes.size(), 1);
     }
 }
